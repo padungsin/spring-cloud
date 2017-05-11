@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:   
+    url: jdbc:mysql://localhost:3306/springcloud 
+    username: springcloud  
+    password: springcloud 
+
+clientapp:
+  greeting:
+    message: Greeting from Config server
+
+server:
+  context-path: /users
+  port: 8080
