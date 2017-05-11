@@ -1,16 +1,16 @@
-package au.com.marlo.springcloud;
+package au.com.marlo.springcloud.servicegateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableConfigurationProperties
-public class UserServiceApplication {
+@EnableZuulProxy
+public class ServiceGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserServiceApplication.class, args);
+		SpringApplication.run(ServiceGatewayApplication.class, args);
 	}
 }
