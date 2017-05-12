@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: service-gateway
+zuul:
+  routes:
+    users:
+        url: http://localhost:9000/users
+ribbon:
+  eureka:
+    enabled: false
+    
+server:
+  port: 8080
