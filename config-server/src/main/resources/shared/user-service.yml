@@ -13,4 +13,4 @@ clientapp:
 
 server:
   context-path: /users
-  port: 9000
+  port: 9100

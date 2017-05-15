@@ -1,0 +1,61 @@
+version: '2.1'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: always
+    ports:
+      - 15672:15672
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  config:
+    image: config-server
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+#  eureka:
+#    image: eureka
+#    restart: always
+#    depends_on:
+#      config:
+#        condition: service_healthy
+#    ports:
+#      - 8761:8761
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+#
+#  gateway:
+#    image: service-gateway
+#    restart: always
+#    depends_on:
+#      config:
+#        condition: service_healthy
+#    ports:
+#      - 80:4000
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
+
+  user-mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: springcloud
+      MYSQL_DATABASE: springcloud
+      MYSQL_USER: springcloud
+      MYSQL_PASSWORD: springcloud
+    image: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
